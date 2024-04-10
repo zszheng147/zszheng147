@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="BAT: Learning to Reason about Spatial Sounds with Large Language Models.">
+  <meta name="keywords" content="Spatial audio, Spatial sound, LLM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BAT</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E1PBHBQRVZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E1PBHBQRVZ');
+</script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body" style="padding-bottom: 24px;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">BAT: Learning to Reason about Spatial Sounds with Large Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zhishengzheng.com/">Zhisheng Zheng</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://jasonppy.github.io/">Puyuan Peng</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://ziyang.tech/">Ziyang Ma</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://chenxie95.github.io/">Xie Chen</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://eunsol.github.io/">Eunsol Choi</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.utexas.edu/~harwath/">David Harwath</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The University of Texas at Austin,</span>
+            <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University</span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2402.01591"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-database"></i>
+                  </span>
+                  <span>Dataset (coming soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section" style="padding-top: 0px;">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Spatial sound reasoning is a fundamental human skill, enabling us to navigate and interpret our surroundings based on sound. 
+          In this paper we present BAT, which combines the spatial sound perception ability of a binaural acoustic scene analysis model
+          with the natural language reasoning capabilities of a large language model (LLM) to replicate this innate ability. 
+          To address the lack of existing datasets of in-the-wild spatial sounds, we synthesized a binaural audio dataset 
+          using AudioSet and SoundSpaces 2.0. Next, we developed SpatialSoundQA, a spatial sound-based question-answering dataset,
+          offering a range of QA tasks that train BAT in various aspects of spatial sound perception and reasoning.
+          The acoustic front end encoder of BAT is a novel spatial audio encoder named Spatial Audio Spectrogram Transformer, or Spatial-AST,
+          which by itself achieves strong performance across sound event detection, spatial localization, and distance estimation.
+          By integrating Spatial-AST with LLaMA-2 7B model, BAT transcends standard Sound Event Localization and Detection (SELD) tasks,
+          enabling the model to reason about the relationships between the sounds in its environment.
+          Our experiments demonstrate BAT’s superior performance on both spatial sound perception and reasoning,
+          showcasing the immense potential of LLMs in navigating and interpreting complex spatial audio environments.
+          </p>
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+
+
+<section class="hero is-light is-small">
+  <div class="container is-max-desktop is-centered has-text-centered">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">BAT architecture</h2>
+          <img src="./static/images/bat-architecture.png"
+                    class="interpolation-image"
+                    alt="Interpolate start reference image."/>
+          <h2 class="has-text-centered is-8">
+            BAT model structure. The rightmost part shows the binaural audio generation process.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop is-centered has-text-centered" style="max-width: 100%;">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">SpatialSoundQA</h2>
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="width: auto; margin: auto;">
+            <thead>
+              <tr>
+                <th><div style="text-align: left;"><strong>Type</strong></div></th>
+                <th><strong>#Sources</strong></th>
+                <th><div style="text-align: left;"><strong>Example</strong></div></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <td><strong>A:</strong> Detection <br> (139K, 15.9%)</td>
+                <td>1</td>
+                <td>
+                  <div style="text-align: left;">
+                    <strong>Q:</strong> Identify the sound events in the audio clip. / <strong>A:</strong> baby laughter; laughter; speech<br>
+                    <strong>Q:</strong> What are the distinct sounds present in this audio clip? / <strong>A:</strong> heart sounds, heartbeat
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                  <td><strong>B:</strong> DP & DoA <br>(139K, 15.9%)</td>
+                <td>1</td>
+                <td>
+                  <div style="text-align: left;">
+                    <strong>Q:</strong> How would you describe the location of this audio clip? / <strong>A:</strong> right, front, below; 2.5m<br>
+                    <strong>Q:</strong> At what distance and in which direction, is the music’s sound originating? / <strong>A:</strong> left, behind, below; 5m
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                  <td><strong>C:</strong> Detection <br>(118K, 13.5%)</td>
+                <td>2</td>
+                <td>
+                  <div style="text-align: left;">
+                    <strong>Q:</strong> Identify the sound events in the audio clip coming from the right, front, below, approximately 3 meters away. / <strong>A:</strong> slosh; speech<br>
+                    <strong>Q:</strong> What sound events can you detect in the audio recording emanating from the left, behind, above, roughly 0.5 meters away? <br> <strong>A:</strong> music; musical instrument; steelpan
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                  <td><strong>D:</strong> DP & DoA <br>(118K, 13.5%)</td>
+                <td>2</td>
+                <td>
+                  <div style="text-align: left;">
+                    <strong>Q:</strong> In which direction and how far away is the source of the heart sounds, heartbeat’s sound? / <strong>A:</strong> left, behind, below; 1m<br>
+                    <strong>Q:</strong> Where is the sound of the music coming from? / <strong>A:</strong> left, behind, below; 3m
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                  <td><strong>E:</strong> Reasoning <br>(358K, 41.2%)</td>
+                <td>2</td>
+                <td>
+                  <div style="text-align: left;">
+                    <strong>Q:</strong> When measuring the direct line distance, is the sound produced by wheeze closer to you than the sound from bird flight, flapping wings? / <strong>A:</strong> No<br>
+                    <strong>Q:</strong> Is the source of both explosion and speech’s sounds from your left side? / <strong>A:</strong> Yes<br>
+                    <strong>Q:</strong> Is the sound from the music on the front and the sound from the rattle on the behind? / <strong>A:</strong> No<br>
+                    <strong>Q:</strong> Does the sound of electric shaver, electric razor appear on the behind of the sound of waterfall? / <strong>A:</strong> Yes<br>
+                    <strong>Q:</strong> Can you estimate the distance from the sound of the speech to the sound of the dog? / <strong>A:</strong> 1.5m<br>
+                    <strong>Q:</strong> What is the sound on the above side of the sound of the vibration? / <strong>A:</strong> croak; frog<br>
+                    <strong>Q:</strong> Could you determine whether the singing’s sound is to the left or right of the steam’s sound? / <strong>A:</strong> left
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zheng2024bat,
+  author    = {Zheng, Zhisheng and Peng, Puyuan and Ma, Ziyang and Chen, Xie and Choi, Eunsol and Harwath, David},
+  title     = {BAT: Learning to Reason about Spatial Sounds with Large Language Models},
+  journal   = {arXiv preprint arXiv:2402.01591},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Licenses</h2>
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website source code based on the <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
